@@ -42,7 +42,7 @@ Desktop application for managing a music collection developed using C#, WPF and 
 
 
 
-\* `Music\_collection` – main application source code
+\* Music\_collection – main application source code
 
 
 
@@ -52,7 +52,7 @@ Desktop application for managing a music collection developed using C#, WPF and 
 
 1\. Clone the repository.
 
-2\. Open `Music\_collection.sln` in Visual Studio.
+2\. Open Music\_collection.sln in Visual Studio.
 
 3\. Configure the MySQL database connection.
 
