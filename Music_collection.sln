@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Music_collection", "Music_collection\Music_collection.csproj", "{9189B90B-7352-42A3-A97B-7393AC03A115}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Music_collection_Installer", "Setup1\Setup1.vdproj", "{C63705C9-6794-4885-903D-5124EA467123}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9189B90B-7352-42A3-A97B-7393AC03A115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9189B90B-7352-42A3-A97B-7393AC03A115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9189B90B-7352-42A3-A97B-7393AC03A115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9189B90B-7352-42A3-A97B-7393AC03A115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C63705C9-6794-4885-903D-5124EA467123}.Debug|Any CPU.ActiveCfg = Debug
+		{C63705C9-6794-4885-903D-5124EA467123}.Release|Any CPU.ActiveCfg = Release
+		{C63705C9-6794-4885-903D-5124EA467123}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EC6DACF-48E0-49FE-AE1E-A10AD1234F2A}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,307 @@
+﻿<UserControl x:Class="Music_collection.UserMainWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Background="#1E0044"
+        xmlns:local="clr-namespace:Music_collection">
+
+    <Grid x:Name="UserMain1WindowGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Background="#2D0066">
+            <TextBlock Text="Менеджер музичної колекції" Foreground="White" 
+                       VerticalAlignment="Center" Margin="20,0" FontSize="18" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
+                <TextBlock Text="Головна сторінка" Foreground="White" Margin="0,0,20,0" VerticalAlignment="Center"/>
+            </StackPanel>
+        </DockPanel>
+
+        <Border Grid.Row="1" BorderBrush="White" BorderThickness="0,0,0,1">
+            <StackPanel Orientation="Horizontal">
+                <Button Width="40" Height="40" 
+                    Background="#460697" BorderBrush="White" BorderThickness="1" 
+                    HorizontalAlignment="Left"
+                    Margin="20,5,20,10" Content="👤" Foreground="White" Click="MainWindowButton_Click">
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" BorderBrush="White" BorderThickness="0,0,0,1" Padding="20,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Margin="75,0,75,0">
+                    <DockPanel>
+                        <TextBlock Text="Пошук альбому за фільтром:" Foreground="White" VerticalAlignment="Center"/>
+                        <TextBlock Text="▽" Foreground="White" Margin="5,0" VerticalAlignment="Center"/>
+                        <Button Content="пошук" Width="60" Background="#460697" Foreground="White" HorizontalAlignment="Right" Click="AlbumFilterButton_Click"/>
+                    </DockPanel>
+                    <Grid Margin="0,5">
+
+                        <TextBox x:Name="AlbumTitleInput" Margin="0,5" HorizontalContentAlignment="Center"
+                                  Background="Transparent" Foreground="White" BorderBrush="White" BorderThickness="1"
+                                  Padding="5" TextChanged="AlbumTitle_TextChanged"/>
+
+                        <TextBlock x:Name="AlbumTitlePlaceholder"
+                            Text="Введіть назву альбому" Foreground="Gray" Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            IsHitTestVisible="False"/>
+                    </Grid>
+
+                    <Grid Margin="0,5">
+
+                        <TextBox x:Name="AlbumYearInput" HorizontalContentAlignment="Center"
+                                  Background="Transparent"
+                                  Foreground="White"
+                                  BorderBrush="White"
+                                  BorderThickness="1"
+                                  Padding="5"
+                                  TextChanged="AlbumYearInput_TextChanged"/>
+
+                        <TextBlock x:Name="AlbumYearPlaceholder"
+                            Text="Введіть рік виходу альбома"
+                            Foreground="Gray"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Center"
+                            IsHitTestVisible="False"/>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="75,0,75,0">
+                    <DockPanel>
+                        <TextBlock Text="Пошук колекції за фільтром:" Foreground="White" VerticalAlignment="Center"/>
+                        <TextBlock Text="▽" Foreground="White" Margin="5,0" VerticalAlignment="Center"/>
+                        <Button Content="пошук" Width="60" Background="#460697" Foreground="White" HorizontalAlignment="Right" Click="TrackFilterButton_Click"/>
+                    </DockPanel>
+                    <Grid Margin="0,5">
+
+                        <TextBox x:Name="TrackTitleInput" HorizontalContentAlignment="Center"
+                                 Background="Transparent"
+                                 Foreground="White"
+                                 BorderBrush="White"
+                                 BorderThickness="1"
+                                 Padding="5"
+                                 TextChanged="TrackTitleInput_TextChanged"/>
+
+                        <TextBlock x:Name="TrackTitlePlaceholder"
+                        Text="Введіть назву композиції"
+                        Foreground="Gray"
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        IsHitTestVisible="False"/>
+                    </Grid>
+
+                    <Grid Margin="0,5">
+
+                        <TextBox x:Name="TrackYearInput" HorizontalContentAlignment="Center"
+                                Background="Transparent"
+                                Foreground="White"
+                                BorderBrush="White"
+                                BorderThickness="1"
+                                Padding="5"
+                                TextChanged="TrackYearInput_TextChanged"/>
+
+                        <TextBlock x:Name="TrackYearPlaceholder"
+                        Text="Введіть рік випуску"
+                        Foreground="Gray"
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        IsHitTestVisible="False"/>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="3" Margin="20,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Margin="10" BorderBrush="White" BorderThickness="1">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top" Background="#460697" Padding="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Список доступних альбомів" Foreground="White" HorizontalAlignment="Left"
+                                VerticalAlignment="Center" FontWeight="Bold" Margin="10,0,0,0"/>
+
+                            <Button Grid.Column="1" Width="30" Height="30" VerticalAlignment="Center" Background="#460697" BorderBrush="White"
+                                BorderThickness="1" Foreground="White" FontSize="15" Content="📁" Cursor="Hand" Click="AddAlbumButton_Click"
+                                    x:Name="AddAlbumButton" Margin="0,0,5,0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+
+                            <Button Grid.Column="2" Width="30" Height="30" VerticalAlignment="Center" Background="#460697" BorderBrush="White"
+                                BorderThickness="1" Foreground="White" FontSize="15" Content="📄" Cursor="Hand" Click="ExportAlbumsButton_Click"
+                                    x:Name="ExportAlbumsButton">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <ListBox Background="Transparent" BorderThickness="0" Foreground="White" HorizontalContentAlignment="Stretch" x:Name="ListOfAllAlbums">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Gray" BorderThickness="0,0,0,1" Padding="5">
+                                    <DockPanel>
+
+                                        <Button x:Name="DeleteAlbumButton" Content="🗑" DockPanel.Dock="Right" Width="20" Height="20" 
+                                                Background="Transparent" Foreground="White" BorderBrush="White" Margin="7" 
+                                                Click="DeleteAlbumButton_Click" Tag="{Binding Id}">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Source={x:Static local:App.CurrentUser}, Path=IsAdmin}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+
+                                        <Button Content="+" DockPanel.Dock="Right" Width="20" Height="20" Background="Transparent" 
+                                                    Foreground="White" BorderBrush="White" Margin="7"
+                                            Click="UserAddAlbumButton_Click" Tag="{Binding Id}"/>
+
+                                        <Button Content="🖊" DockPanel.Dock="Right" Width="20" Height="20" Background="Transparent" Foreground="White" BorderBrush="White" Margin="7"
+                                            Click="AlbumEditorButton_Click" Tag="{Binding}" x:Name="EditAlbumButton">
+
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Source={x:Static local:App.CurrentUser}, Path=IsAdmin}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+
+                                        </Button>
+
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding AlbumTitle}" FontWeight="Bold"/>
+                                            <TextBlock Text="{Binding ReleaseYear, StringFormat=' ({0})'}" Foreground="LightGray" Margin="5,0,0,0"/>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                </DockPanel>
+            </Border>
+
+            <Border Grid.Column="1" Margin="10" BorderBrush="White" BorderThickness="1">
+                <DockPanel>
+                    <Border DockPanel.Dock="Top" Background="#460697" Padding="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Список доступних композицій" Foreground="White" HorizontalAlignment="Left"
+                                VerticalAlignment="Center" FontWeight="Bold" Margin="10,0,0,0"/>
+
+                            <Button Grid.Column="1" Width="30" Height="30" VerticalAlignment="Center" Background="#460697" BorderBrush="White"
+                                BorderThickness="1" Foreground="White" FontSize="15" Content="🎵" Cursor="Hand" Click="AddTrackButton_Click"
+                                    x:Name="AddTrackButton" Margin="0,0,5,0">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+
+                            <Button Grid.Column="2" Width="30" Height="30" VerticalAlignment="Center" Background="#460697" BorderBrush="White"
+                                BorderThickness="1" Foreground="White" FontSize="15" Content="📄" Cursor="Hand" Click="ExportTracksButton_Click"
+                                    x:Name="ExportTracksButton">
+                                <Button.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="20"/>
+                                    </Style>
+                                </Button.Resources>
+                            </Button>
+                        </Grid>
+                    </Border>
+
+                    <ListBox Background="Transparent" BorderThickness="0" Foreground="White" HorizontalContentAlignment="Stretch" x:Name="ListOfAllMusickTracks">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Gray" BorderThickness="0,0,0,1" Padding="5">
+                                    <DockPanel>
+                                        <Button Content="🗑" DockPanel.Dock="Right" Width="20" Height="20" Background="Transparent" Foreground="White" BorderBrush="White" Margin="7"
+                                            Click="DeleteTrackButton_Click" Tag="{Binding Id}" x:Name="DeleteTrackButton">
+
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Source={x:Static local:App.CurrentUser}, Path=IsAdmin}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+
+                                        <Button Content="+" DockPanel.Dock="Right" Width="20" Height="20" Background="Transparent" Foreground="White" BorderBrush="White"
+                                            Click="UserAddTrackButton_Click" Tag="{Binding Id}"/>
+                                        <Button Content="🖊" DockPanel.Dock="Right" Width="20" Height="20" Background="Transparent" Foreground="White" BorderBrush="White" Margin="7"
+                                            Click="TrackEditorButton_Click" Tag="{Binding}" x:Name="EditTrackButton">
+
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Source={x:Static local:App.CurrentUser}, Path=IsAdmin}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+
+                                        <StackPanel VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding Title}" FontWeight="Bold" FontSize="12"/>
+                                            <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+                                                <TextBlock Text="{Binding Author}" Foreground="LightGray" FontSize="10"/>
+                                                <TextBlock Text=" • " Foreground="Gray" FontSize="10"/>
+                                                <TextBlock Text="{Binding Album}" Foreground="LightGray" FontSize="10"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

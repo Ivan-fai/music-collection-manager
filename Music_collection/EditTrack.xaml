@@ -1,0 +1,48 @@
+﻿<Window x:Class="Music_collection.EditTrack"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Music_collection"
+        mc:Ignorable="d"
+        Title="EditTrack" Height="500" Width="400"
+        WindowStartupLocation="CenterOwner"
+        Background="#1E0044" ResizeMode="NoResize">
+
+    <Border Margin="20" BorderBrush="White" BorderThickness="1" CornerRadius="35">
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Змінити композицію" Foreground="White" 
+                   FontSize="20" HorizontalAlignment="Center" Margin="0,10,0,15"/>
+
+            <StackPanel Grid.Row="1" Margin="20,0">
+                <TextBox x:Name="TrackTitleEdit" Background="Transparent" 
+                     Foreground="White" BorderBrush="White" BorderThickness="1" 
+                     Margin="0,5" Padding="5" HorizontalContentAlignment="Center"/>
+
+                <TextBox x:Name="TrackAuthorEdit" Background="Transparent" 
+                     Foreground="White" BorderBrush="White" BorderThickness="1" 
+                     Margin="0,5" Padding="5" HorizontalContentAlignment="Center"/>
+
+                <TextBox x:Name="TrackAlbumEdit" Background="Transparent" 
+                     Foreground="White" BorderBrush="White" BorderThickness="1" 
+                     Margin="0,5" Padding="5" HorizontalContentAlignment="Center"/>
+
+                <TextBox x:Name="TrackYearEdit" Background="Transparent" 
+                     Foreground="White" BorderBrush="White" BorderThickness="1" 
+                     Margin="0,5" Padding="5" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Button Content="Зберегти" Width="100" Height="30" Margin="10,0" Background="#460697" Foreground="White" Click="SaveButton_Click"/>
+                <Button Content="Скасувати" Width="100" Height="30" Margin="10,0" Background="Transparent" Foreground="White" BorderBrush="White" Click="CancelButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

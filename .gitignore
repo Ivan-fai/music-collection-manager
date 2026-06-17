@@ -1,0 +1,27 @@
+# Visual Studio
+
+.vs/
+
+# Build folders
+
+bin/
+obj/
+
+# User settings
+
+*.user
+*.rsuser
+*.suo
+
+# Logs
+
+*.log
+
+# Environment files
+
+.env
+
+# Installer output
+
+*.msi
+*.exe

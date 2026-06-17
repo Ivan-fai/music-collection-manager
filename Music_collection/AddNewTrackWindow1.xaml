@@ -1,0 +1,109 @@
+﻿<Window x:Class="Music_collection.AddNewTrackWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Додати композицію" Height="500" Width="400"
+        WindowStartupLocation="CenterOwner"
+        Background="#1E0044" ResizeMode="NoResize">
+
+    <Border Margin="20" BorderBrush="White" BorderThickness="1" CornerRadius="35">
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Додати композицію" Foreground="White" 
+                   FontSize="20" HorizontalAlignment="Center" Margin="0,10,0,15"/>
+
+            <StackPanel Grid.Row="1" Margin="20,0">
+                <Grid Margin="0,5">
+
+                    <TextBox x:Name="TrackTitleInput"
+                 Background="Transparent"
+                 Foreground="White"
+                 BorderBrush="White"
+                 BorderThickness="1"
+                 Padding="5"
+                 TextChanged="TrackTitleInput_TextChanged"/>
+
+                    <TextBlock x:Name="TrackTitlePlaceholder"
+                   Text="Введіть назву композиції"
+                   Foreground="Gray"
+                   Margin="10,0,0,0"
+                   VerticalAlignment="Center"
+                   IsHitTestVisible="False"/>
+                </Grid>
+                
+                <Grid Margin="0,5">
+
+                    <TextBox x:Name="TrackAuthorInput"
+             Background="Transparent"
+             Foreground="White"
+             BorderBrush="White"
+             BorderThickness="1"
+             Padding="5"
+             TextChanged="TrackAuthorInput_TextChanged"/>
+
+                    <TextBlock x:Name="TrackAuthorPlaceholder"
+               Text="Введіть автора композиції"
+               Foreground="Gray"
+               Margin="10,0,0,0"
+               VerticalAlignment="Center"
+               IsHitTestVisible="False"/>
+                </Grid>
+
+                <Grid Margin="0,5">
+
+                    <TextBox x:Name="TrackAlbumInput"
+                Background="Transparent"
+                Foreground="White"
+                BorderBrush="White"
+                BorderThickness="1"
+                Padding="5"
+                TextChanged="TrackAlbumInput_TextChanged"/>
+
+                    <TextBlock x:Name="TrackAlbumPlaceholder"
+                  Text="Введіть назву альбому трека"
+                  Foreground="Gray"
+                  Margin="10,0,0,0"
+                  VerticalAlignment="Center"
+                  IsHitTestVisible="False"/>
+                </Grid>
+
+                <Grid Margin="0,5">
+
+                    <TextBox x:Name="TrackYearInput"
+                Background="Transparent"
+                Foreground="White"
+                BorderBrush="White"
+                BorderThickness="1"
+                Padding="5"
+                TextChanged="TrackYearInput_TextChanged"/>
+
+                    <TextBlock x:Name="TrackYearPlaceholder"
+                  Text="Введіть рік випуску"
+                  Foreground="Gray"
+                  Margin="10,0,0,0"
+                  VerticalAlignment="Center"
+                  IsHitTestVisible="False"/>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid>
+                    <Border HorizontalAlignment="Center" BorderThickness="2" Width="82" BorderBrush="White" Margin="0,10,0,-10"/>
+                    <TextBlock Text="Завантажити&#x0a;музичну&#x0a;композицію,&#x0a;формат: WAV,&#x0a;FLAC, MP3" 
+                           Foreground="White" FontSize="10" TextAlignment="Center" 
+                           VerticalAlignment="Center" Margin="0,20,0,0" FontWeight="Bold"/>
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+                <Button Content="Зберегти" Width="100" Height="30" Margin="10,0" Background="#460697" Foreground="White" Click="SaveButton_Click"/>
+                <Button Content="Скасувати" Width="100" Height="30" Margin="10,0" Background="Transparent" Foreground="White" BorderBrush="White" Click="CancelButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
